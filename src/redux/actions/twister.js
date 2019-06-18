@@ -16,14 +16,13 @@ export const getTwisterData = twisterUsername => async dispatch => {
         }
       })
       .then(twisterData => {
-        dispatch({
-          type: LOAD_TWISTER_SUCCESS,
-          payload: twisterData
-        });
-
         // 2. If twister exist, get his twists list
-        if (twisterData) {
-          fetch(`http://localhost:8081/api/twists/${twisterData.firebaseId}`)
+        if (twisterData.status === 200) {
+          dispatch({
+            type: LOAD_TWISTER_SUCCESS,
+            payload: twisterData.foundTwister
+          });
+          fetch(`http://localhost:8081/api/twists/${twisterData.foundTwister.firebaseId}`)
           .then(res => {
             if (res.ok) {
               return res.json();
@@ -45,20 +44,20 @@ export const getTwisterData = twisterUsername => async dispatch => {
           // 3. else, if twister was not found, dispatch error message
           dispatch({
             type: LOAD_TWISTER_ERROR,
-            payload: "Sorry, we could not load this twister info."
+            payload: "Sorry, we didn't find this twister."
           });
         }
       })
       .catch(err => {
         dispatch({
           type: LOAD_TWISTER_ERROR,
-          payload: "Sorry, we could not load this twister info."
+          payload: "Sorry, we didn't find this twister."
         });
       });
   } catch (err) {
     dispatch({
       type: LOAD_TWISTER_ERROR,
-      payload: "Sorry, we could not load this twister info."
+      payload: "Sorry, we didn't find this twister."
     });
   }
 };

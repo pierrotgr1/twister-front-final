@@ -72,8 +72,7 @@ export const getUserOwnTwistsList = currentUserFbId => async dispatch => {
 // Like one Twist action creator
 export const likeOneTwist = (twist_id, currentUserFbId) => async dispatch => {
   try {
-    console.log("inside like action");
-    fetch(`http://localhost:8081/api/twists/${twist_id}/new-like`, {
+    fetch(`http://localhost:8081/api/twists/${twist_id}/like`, {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ currentUserFbId })
@@ -84,9 +83,10 @@ export const likeOneTwist = (twist_id, currentUserFbId) => async dispatch => {
         }
       })
       .then(data => {
+        console.log("data", data);
         dispatch({
           type: LIKE_ONE_TWIST_SUCCESS,
-          payload: data.updatedLikedTwist
+          payload: data.likedTwist
         });
         // trash solution that reloads the page automatically
         window.location.reload();
@@ -104,7 +104,7 @@ export const likeOneTwist = (twist_id, currentUserFbId) => async dispatch => {
 // UnLike one Twist action creator
 export const unlikeOneTwist = (twist_id, currentUserFbId) => async dispatch => {
   try {
-    console.log("inside unlike action");
+    console.log("twist_id", twist_id);
     fetch(`http://localhost:8081/api/twists/${twist_id}/unlike`, {
       method: "post",
       headers: { "Content-Type": "application/json" },

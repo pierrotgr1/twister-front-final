@@ -30,7 +30,7 @@ class TwisterProfile extends Component {
       <div>
         <NavBar />
         <div className="home container mt-5">
-          {twister == undefined ? (
+          {errorTwisterMessage !== "" ? (
             <div className="alert alert-danger" role="alert">
               {errorTwisterMessage}
             </div>

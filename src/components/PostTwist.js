@@ -26,7 +26,7 @@ class PostTwist extends Component {
       body: JSON.stringify(newTwist)
     })
       .then(res => res.json())
-      .then(res => res)
+      .then(() => window.location.reload())
       .catch(err => err);
   };
 

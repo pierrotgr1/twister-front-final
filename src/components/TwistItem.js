@@ -4,19 +4,9 @@ import { likeOneTwist } from "../redux/actions/twist";
 import { unlikeOneTwist } from "../redux/actions/twist";
 
 class TwistItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLiked: false
-    };
-  }
-
   handleLike = () => {
-    this.setState({
-      isLiked: !this.state.isLiked
-    });
-    if (this.state.isLiked) {
-      this.props.unlikeOneTwist(this.props.twist._id);
+    if (this.props.twist.likersFbId.includes(this.props.currentUserFbId)) {
+      this.props.unlikeOneTwist(this.props.twist._id, this.props.currentUserFbId);
     } else {
       this.props.likeOneTwist(this.props.twist._id, this.props.currentUserFbId);
     }
@@ -24,10 +14,7 @@ class TwistItem extends Component {
 
   render() {
     let { twist } = this.props;
-    console.log("twist", twist);
-
     let likeNumber = twist.likersFbId.length;
-    console.log("likeNumber", twist.likersFbId.length);
 
     return (
       <div className="twist-item mb-3">
@@ -40,7 +27,7 @@ class TwistItem extends Component {
             <p>{twist.content ? twist.content : ""}</p>
             <div className="twist-item-likes">
               <i
-                className={`fa${this.state.isLiked ? "s" : "r"} fa-heart mr-2`}
+                className={`fa${twist.likersFbId.includes(this.props.currentUserFbId) ? "s" : "r"} fa-heart mr-2`}
                 onClick={this.handleLike}
               />
               <span>{likeNumber}</span>
