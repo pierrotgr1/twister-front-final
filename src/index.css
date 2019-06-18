@@ -1,0 +1,180 @@
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+}
+
+a.link {
+  color: #3f799c;
+  text-decoration: underline;
+}
+
+a.link:hover {
+  text-decoration: none;
+}
+
+.login .logo {
+  width: 20em;
+  height: 20em;
+  margin: 2em 0 1.5em 0;
+}
+
+.login .logo img {
+  height: 100%;
+  width: auto;
+}
+
+.login h1 {
+  margin-bottom: 1em;
+}
+
+.login p {
+  margin-bottom: 0.5em;
+}
+
+.login .signin-btn,
+.login .signup-btn {
+  width: 20vw;
+  border: none;
+  padding: 0.5em 1.5em;
+}
+
+.login .signin-btn {
+  background-color: #3f799c;
+  margin-bottom: 1.5em;
+}
+
+.login .signup-btn {
+  background-color: #f9f871;
+}
+
+.login form {
+  width: 33vw;
+}
+
+.login .form-check {
+  margin-bottom: 2em;
+}
+
+.navbar-brand {
+  flex-grow: 1;
+}
+
+.navbar-brand h1 {
+  font-family: "Rubik", sans-serif;
+  color: #3f799c;
+  font-size: 1.5em;
+}
+
+.logo-navbar {
+  height: 3em;
+  width: 3em;
+}
+
+.logo-navbar img {
+  height: 100%;
+  width: auto;
+}
+
+.navbar-collapse .btn {
+  border-color: #3f799c;
+  color: #3f799c;
+}
+
+.navbar-collapse .btn:hover {
+  background-color: #3f799c;
+  color: #fff;
+}
+
+a.logout-btn {
+  background-color: #cef6ff;
+  border-radius: 6px;
+  color: #3f799c !important;
+}
+
+.logo-title {
+  color: #3f799c;
+}
+
+.signIn-btn {
+  color: #fff;
+}
+
+/* ================== HOME =================== */
+.home {
+}
+
+/* =============== POST TWIST & TWIST LIST ================ */
+.post-twist,
+.twists-list {
+  background-color: #f8f9fa;
+  padding: 2em;
+  border-radius: 10px;
+}
+
+.post-twist-btn {
+  background-color: #3f799c;
+  color: #fff;
+}
+
+.post-twist-btn:hover {
+  background-color: #f8f9fa;
+  color: #3f799c;
+  border: 1px solid #3f799c;
+  border-radius: 6px;
+}
+
+/* ================== PROFILE CARD =================== */
+.profile-card {
+  background-color: #f8f9fa;
+  padding: 2em;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-card .profile-pic {
+  font-size: 3em;
+  align-self: center;
+}
+
+.profile-card .profile-info h3 {
+  text-align: center;
+  margin-bottom: 1em;
+  color: #3f799c;
+}
+
+.profile-card .profile-info p {
+  margin-bottom: 0.5em;
+  color: #3f799c;
+}
+
+.profile-card-btn {
+  background-color: #f8f9fa;
+  padding: 0.5em;
+  border-radius: 10px;
+  width: 100%;
+  color: #3f799c;
+  border: 1px solid #3f799c;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.profile-card-btn:hover {
+  background: #3f799c;
+  color: #fff;
+}
+/* ================== TWIST ITEM =================== */
+.twist-item {
+  padding: 1em;
+  border-radius: 10px;
+  border: 1px solid #6c757d;
+}
+.twist-item .profile-pic {
+  display: flex;
+}
+.twist-item .profile-pic i {
+  font-size: 3em;
+}
+.twist-item .twist-item-text h4 {
+  font-size: 1.25em;
+}
